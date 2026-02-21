@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>OPW</title>
+<title>Vison > Noise</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="icon" type="image/x-icon" href="http://dev.vladimircayemitte.com/mel/img/5.png">
+<link rel="icon" type="image/x-icon" href="http://dev.vladimircayemitte.com/vovern/images/VOVERN.COM%20b.png">
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-  background-image: url('http://dev.vladimircayemitte.com/mel/img/IMG_2067.jpg');
+  background-image: url('http://dev.vladimircayemitte.com/vovern/images/vovern-bg.jpeg');
   background-color: black;
   min-height: 100%;
   background-position: center;
@@ -21,12 +21,17 @@ h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
   
+.vovern-button:hover {
+  background-color: #000;
+  color: #90E4C1;
+}
+  
 .button {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #000;
   border: none;
-  color: #f3d16e;
+  color: #90E4C1;
   text-align: center;
   font-size: 28px;
   padding: 10px;
@@ -44,12 +49,12 @@ h2, h3, h4, h5, h6 {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  right: -20px;
+  right: -10px;
   transition: 0.5s;
 }
 
 .button:hover span {
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .button:hover span:after {
@@ -61,16 +66,53 @@ h2, h3, h4, h5, h6 {
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    
-  </div>
   <div class="w3-display-middle">
-	<a href="#" title="" style="text-decoration:none;"><button class="button" style="vertical-align:middle"><span>ENTER</span></button></a>
+	<a href="http://dev.vladimircayemitte.com/vovern/" title="" style="text-decoration:none;"><img src="http://dev.vladimircayemitte.com/vovern/images/VOVERN.COM%20b.png" height="200" width="200"></a>
   </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    
-  </div>
+  <div class="w3-display-bottommiddle w3-container" style="color: black;">Waitlist coming soon.</div>
 </div>
+<script>
+  let currentLang = localStorage.getItem('lang') || 'fr';
 
+function applyLanguage() {
+  document.querySelectorAll('[data-fr]').forEach(el => {
+    el.innerHTML = el.dataset[currentLang];
+  });
+}
+
+function toggleLanguage() {
+  currentLang = currentLang === 'fr' ? 'en' : 'fr';
+  localStorage.setItem('lang', currentLang);
+  applyLanguage();
+}
+
+/* Apply language on first load */
+document.addEventListener('DOMContentLoaded', applyLanguage);
+
+  
+function loadCalendly(lang) {
+    const container = document.getElementById('rdv');
+    container.innerHTML = '';
+
+    const url =
+      lang === 'fr'
+        ? 'https://calendly.com/wealth-aforalpha/discovery-call?back=1&month=2026-01&date=2026-01-31&locale=fr'
+        : 'https://calendly.com/wealth-aforalpha/discovery-call?back=1&month=2026-01&date=2026-01-31&locale=en';
+
+    Calendly.initInlineWidget({
+      url,
+      parentElement: container,
+    });
+  }
+
+  // Initial load
+  loadCalendly(currentLang);
+
+  // Call this whenever language changes
+  function onLanguageToggle(newLang) {
+    loadCalendly(newLang);
+  }
+
+</script>
 </body>
 </html>
