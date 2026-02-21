@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OPW</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="icon" type="image/x-icon" href="http://dev.vladimircayemitte.com/mel/img/5.png">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('http://dev.vladimircayemitte.com/mel/img/IMG_2067.jpg');
+  background-color: black;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+  
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #000;
+  border: none;
+  color: #f3d16e;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.button span {
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-topleft w3-padding-large w3-xlarge">
+    
+  </div>
+  <div class="w3-display-middle">
+	<a href="#" title="" style="text-decoration:none;"><button class="button" style="vertical-align:middle"><span>ENTER</span></button></a>
+  </div>
+  <div class="w3-display-bottomleft w3-padding-large">
+    
+  </div>
+</div>
+
+</body>
+</html>
